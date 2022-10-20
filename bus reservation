@@ -173,6 +173,77 @@ void a::empty()
   }
 
 }
+void a::show()
+
+{
+
+  int n;
+
+  char number[5];
+
+  cout<<"Enter bus no: ";
+
+  cin>>number;
+
+  for(n=0;n<=p;n++)
+
+  {
+
+    if(strcmp(bus[n].busn, number)==0)
+
+    break;
+
+  }
+
+while(n<=p)
+
+{
+
+  vline('*');
+
+  cout<<"Bus no: \t"<<bus[n].busn
+
+  <<"\nDriver: \t"<<bus[n].driver<<"\t\tArrival time: \t"
+
+  <<bus[n].arrival<<"\tDeparture time:"<<bus[n].depart
+
+  <<"\nFrom: \t\t"<<bus[n].from<<"\t\tTo: \t\t"<<
+
+  bus[n].to<<"\n";
+
+  vline('*');
+
+  bus[0].position(n);
+
+  int a=1;
+
+  for (int i=0; i<8; i++)
+
+  {
+
+    for(int j=0;j<4;j++)
+
+    {
+
+      a++;
+
+      if(strcmp(bus[n].seat[i][j],"Empty")!=0)
+
+      cout<<"\nThe seat no "<<(a-1)<<" is reserved for "<<bus[n].seat[i][j]<<".";
+
+    }
+
+  }
+
+  break;
+
+  }
+
+  if(n>p)
+
+    cout<<"Enter correct bus no: ";
+
+}
 int main()
 
 {
