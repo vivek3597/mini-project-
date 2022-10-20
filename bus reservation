@@ -153,7 +153,88 @@ void a::allotment()
     }
 
 
+}
+void a::empty()
+
+{
+
+  for(int i=0; i<8;i++)
+
+  {
+
+    for(int j=0;j<4;j++)
+
+    {
+
+      strcpy(bus[p].seat[i][j], "Empty");
+
+    }
+
   }
+
+}
+void a::show()
+
+{
+
+  int n;
+
+  char number[5];
+
+  cout<<"Enter bus no: ";
+
+  cin>>number;
+
+  for(n=0;n<=p;n++)
+
+  {
+
+    if(strcmp(bus[n].busn, number)==0)
+
+    break;
+
+  }
+
+while(n<=p)
+
+{
+
+  vline('*');
+
+  cout<<"Bus no: \t"<<bus[n].busn
+
+  <<"\nDriver: \t"<<bus[n].driver<<"\t\tArrival time: \t"
+
+  <<bus[n].arrival<<"\tDeparture time:"<<bus[n].depart
+
+  <<"\nFrom: \t\t"<<bus[n].from<<"\t\tTo: \t\t"<<
+
+  bus[n].to<<"\n";
+
+  vline('*');
+
+  bus[0].position(n);
+
+  int a=1;
+
+  for (int i=0; i<8; i++)
+
+  {
+
+    for(int j=0;j<4;j++)
+
+    {
+
+      a++;
+
+      if(strcmp(bus[n].seat[i][j],"Empty")!=0)
+
+      cout<<"\nThe seat no "<<(a-1)<<" is reserved for "<<bus[n].seat[i][j]<<".";
+
+    }
+
+  }
+
   void a::avail()
 
 {
@@ -182,6 +263,84 @@ void a::allotment()
 }
 
   int main()
+=======
+
+  break;
+
+  }
+
+  if(n>p)
+
+    cout<<"Enter correct bus no: ";
+
+}
+
+void a::position(int l)
+
+{
+
+  int s=0;p=0;
+
+  for (int i =0; i<8;i++)
+
+  {
+
+    cout<<"\n";
+
+    for (int j = 0;j<4; j++)
+
+    {
+
+      s++;
+
+      if(strcmp(bus[l].seat[i][j], "Empty")==0)
+
+        {
+
+          cout.width(5);
+
+          cout.fill(' ');
+
+          cout<<s<<".";
+
+          cout.width(10);
+
+          cout.fill(' ');
+
+          cout<<bus[l].seat[i][j];
+
+          p++;
+
+        }
+
+        else
+
+        {
+
+        cout.width(5);
+
+        cout.fill(' ');
+
+        cout<<s<<".";
+
+        cout.width(10);
+
+        cout.fill(' ');
+
+        cout<<bus[l].seat[i][j];
+
+        }
+
+      }
+
+    }
+
+  cout<<"\n\nThere are "<<p<<" seats empty in Bus No: "<<bus[l].busn;
+
+  }
+
+int main()
+
 
 {
   ios_base::sync_with_stdio(false);
