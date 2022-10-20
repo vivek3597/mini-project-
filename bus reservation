@@ -235,6 +235,36 @@ while(n<=p)
 
   }
 
+  void a::avail()
+
+{
+
+
+  for(int n=0;n<p;n++)
+
+  {
+
+    vline('*');
+
+    cout<<"Bus no: \t"<<bus[n].busn<<"\nDriver: \t"<<bus[n].driver
+
+    <<"\t\tArrival time: \t"<<bus[n].arrival<<"\tDeparture Time: \t"
+
+    <<bus[n].depart<<"\nFrom: \t\t"<<bus[n].from<<"\t\tTo: \t\t\t"
+
+    <<bus[n].to<<"\n";
+
+    vline('*');
+
+    vline('_');
+
+  }
+
+}
+
+  int main()
+=======
+
   break;
 
   }
@@ -310,6 +340,7 @@ void a::position(int l)
   }
 
 int main()
+
 
 {
   ios_base::sync_with_stdio(false);
